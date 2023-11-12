@@ -33,7 +33,7 @@ def get_argument_parser():
 	program.add_argument('-v', '--version', version = metadata.get('name') + ' ' + metadata.get('version'), action = 'version')
 	# misc
 	group_misc = program.add_argument_group('misc')
-	group_misc.add_argument('--skip-download', help = wording.get('skip_download_help'), dest = 'skip_download', default = True, action = 'store_true')
+	group_misc.add_argument('--skip-download', help = wording.get('skip_download_help'), dest = 'skip_download', default = False, action = 'store_true')
 	group_misc.add_argument('--headless', help = wording.get('headless_help'), dest = 'headless', action = 'store_true')
 	# execution
 	group_execution = program.add_argument_group('execution')
