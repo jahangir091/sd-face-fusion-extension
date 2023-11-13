@@ -8,6 +8,8 @@ from facefusion.uis.core import get_ui_component
 from facefusion.utilities import is_image, is_video, normalize_output_path, clear_temp
 from facefusion.uis.typing import Update
 
+import os
+
 OUTPUT_IMAGE : Optional[gradio.Image] = None
 OUTPUT_VIDEO : Optional[gradio.Video] = None
 OUTPUT_START_BUTTON : Optional[gradio.Button] = None
@@ -57,6 +59,9 @@ def start(output_path : str) -> Tuple[Update, Update]:
 		return gradio.update(value = facefusion.globals.output_path, visible = True), gradio.update(value = None, visible = False)
 	if is_video(facefusion.globals.output_path):
 		return gradio.update(value = None, visible = False), gradio.update(value = facefusion.globals.output_path, visible = True)
+	
+	# os.remove(facefusion.globals.source_path)
+	# os.remove(facefusion.globals.target_path)
 	return gradio.update(), gradio.update()
 
 

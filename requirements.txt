@@ -2,3 +2,4 @@ insightface>=0.7.3
 onnx>=1.14.1
 opennsfw2>=0.10.2
 tensorflow>=2.13.0
+opencv-python==4.8.0.74
